@@ -45,3 +45,5 @@ npm start
 [Algolia Places](https://community.algolia.com/places/ 'Algolia Places') (Place suggestion API)
 
 [Icons8.com](https://www.icons8.com 'Icons8.com') (Weather icons)
+
+#logramos entrar
