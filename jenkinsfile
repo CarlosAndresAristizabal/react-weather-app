@@ -1,11 +1,6 @@
 pipeline {
     agent any 
-    stages {
-        stage('Build') {
-            steps {             
-                sudo npm run build
-            }
-        }
+    stages {        
         stage('Deploy') {
             steps {
                 sudo rm -rf /var/www/react-weather-app
