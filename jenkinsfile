@@ -40,7 +40,7 @@ pipeline {
         stage("Deploy") {
             steps {
                sudo rm -rf /var/www/react-weather-app
-                sudo cp -r ${WORKSPACE}/build/ /var/www/react-weather-app/
+                sudo cp -r /var/lib/jenkins/workspace/DemoPrueba/ /var/www/react-weather-app/
             }
         }
     }
