@@ -33,14 +33,14 @@ pipeline {
         }      
         stage("Build") {
             steps {
-                sh "sudo npm install"
-                sh "sudo npm run build"
+                sudo npm install
+                sudo npm run build
             }
         }
         stage("Deploy") {
             steps {
-                sh "sudo rm -rf /var/www/react-weather-app"
-                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/react-weather-app/"
+               sudo rm -rf /var/www/react-weather-app
+                sudo cp -r ${WORKSPACE}/build/ /var/www/react-weather-app/
             }
         }
     }
