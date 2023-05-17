@@ -30,8 +30,7 @@ pipeline {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
             }
-        } 
-        stages {
+        }        
         stage('Build') {
             steps {
                 sudo npm install
