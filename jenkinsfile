@@ -2,8 +2,7 @@ pipeline {
     agent any 
     stages {
         stage('Build') {
-            steps {
-                sudo npm install
+            steps {             
                 sudo npm run build
             }
         }
