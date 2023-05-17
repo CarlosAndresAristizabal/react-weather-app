@@ -1,13 +1,13 @@
 pipeline {
     agent any 
     stages {
-        stage("Build") {
+        stage('Build') {
             steps {
                 sudo npm install
                 sudo npm run build
             }
         }
-        stage("Deploy") {
+        stage('Deploy') {
             steps {
                 sudo rm -rf /var/www/react-weather-app
                 sudo cp -r /var/lib/jenkins/workspace/DemoPrueba /var/www/react-weather-app
@@ -43,17 +43,5 @@ pipeline {
                 echo 'Save the assemblies generated from the compilation' 
             }
         }      
-        stage("Build") {
-            steps {
-                sh "sudo npm install"
-                sh "sudo npm run build"
-            }
-        }
-        stage("Deploy") {
-            steps {
-                sudo rm -rf /var/www/react-weather-app
-                sudo cp -r /var/lib/jenkins/workspace/DemoPrueba /var/www/react-weather-app
-            }
-        }
     }
 }
