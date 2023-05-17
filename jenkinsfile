@@ -1,6 +1,18 @@
 pipeline {
     agent any 
     stages {
+        stage("Build") {
+            steps {
+                sudo npm install
+                sudo npm run build
+            }
+        }
+        stage("Deploy") {
+            steps {
+                sudo rm -rf /var/www/react-weather-app
+                sudo cp -r /var/lib/jenkins/workspace/DemoPrueba /var/www/react-weather-app
+            }
+        }
         stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
