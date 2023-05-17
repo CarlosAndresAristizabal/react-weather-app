@@ -31,12 +31,6 @@ pipeline {
                 echo 'Save the assemblies generated from the compilation' 
             }
         }        
-        stage('Build') {
-            steps {
-                sudo npm install
-                sudo npm run build
-            }
-        }
         stage('Deploy') {
             steps {
                 sudo rm -rf /var/www/react-weather-app
