@@ -6,17 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
-
     runs-on: self-hosted
-
     strategy:
       matrix:
-        node-version: [12.x, 16.x, 18.x]
+        node-version: [12.x ,14.x, 16.x, 18.x, 20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,6 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: sudo npm ci
-    - run: sudo npm run build --if-present
-    - run: sudo pm2 restart react-weather-app
+    - run: |
+        sudo npm ci
+        sudo npm run build --if-present
+        sudo npm run build
+        sudo pm2 restart react-weather-app
+       
